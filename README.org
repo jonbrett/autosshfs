@@ -30,10 +30,17 @@
 
 * Quick Install
 
+On Ubuntu/Debian:
 :    sudo apt-get install keychain ssh-askpass sshfs autofs
 :    git clone https://github.com/hellekin/autosshfs.git
 :    cd autosshfs && sudo make install
 :    sudo autosshfs-user add $(id -un)
+
+On Fedora:
+:    su -c "yum install openssh sshfs autofs keychain openssh-askpass"
+:    su -c "systemctl start autofs; systemctl enable autofs"
+:    git clone https://github.com/hellekin/autosshfs.git && cd autosshfs
+:    su -c "make install && autosshfs-user add $(id -un)"
 
      If you don't already have an SSH key, create one now
 
